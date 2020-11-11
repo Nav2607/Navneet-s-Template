@@ -11,13 +11,14 @@ class BaseClass{
         this.image = loadImage("sprites/base.png");
         World.add(world, this.body);
       }
+
       display(){
         var angle = this.body.angle;
-        push();
+        push();//saving your settings for the current object
         translate(this.body.position.x, this.body.position.y);
         rotate(angle);
         imageMode(CENTER);
         image(this.image, 0, 0, this.width, this.height);
-        pop();
+        pop();//Undo the settings
       }
 }
